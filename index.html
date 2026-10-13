@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Famiglia Moltisanti</title>
+  <meta name="description" content="Famiglia Moltisanti — honor, lealtad y respeto. Únete a la familia." />
+  <meta name="theme-color" content="#0a0a0c" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="fx" aria-hidden="true"></canvas>
+
+  <header class="nav" id="nav">
+    <a href="#inicio" class="brand"><span class="brand-mark">M</span><span>Famiglia <b>Moltisanti</b></span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#familia">La Familia</a>
+      <a href="#panel">Panel</a>
+      <a href="#tablon">Tablón</a>
+      <a href="#discord">Discord</a>
+      <button class="btn btn-ghost" id="btnLogin">Iniciar sesión</button>
+      <button class="btn btn-ghost hidden" id="btnLogout">Salir</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-inner reveal">
+        <p class="eyebrow">Est. Famiglia · Honor · Lealtad · Respeto</p>
+        <h1>Famiglia <span class="gold">Moltisanti</span></h1>
+        <p class="lead">Una familia no se elige: se gana. Entra en nuestro mundo, conoce nuestras reglas y forma parte de algo más grande.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" id="discordHero" href="#" target="_blank" rel="noopener">Unirse al Discord</a>
+          <a class="btn btn-outline" href="#familia">Conocer la familia</a>
+        </div>
+      </div>
+      <a href="#familia" class="scroll-hint" aria-label="Bajar">⌄</a>
+    </section>
+
+    <section class="section" id="familia">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Quiénes somos</p>
+          <h2>La Familia</h2>
+          <div class="divider"></div>
+        </header>
+        <div class="grid grid-3">
+          <article class="card reveal"><div class="icon">♛</div><h3>Honor</h3><p>Nuestra palabra vale más que cualquier contrato. Cumplimos lo que prometemos.</p></article>
+          <article class="card reveal"><div class="icon">♞</div><h3>Lealtad</h3><p>La familia primero, siempre. Quien cuida de los suyos nunca camina solo.</p></article>
+          <article class="card reveal"><div class="icon">♜</div><h3>Respeto</h3><p>Se respeta la jerarquía, la casa y a cada miembro, dentro y fuera del servidor.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="panel">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Información</p>
+          <h2>Panel de la Familia</h2>
+          <div class="divider"></div>
+        </header>
+
+        <div class="stats reveal">
+          <div class="stat"><span class="num" data-count="0" id="statMembers">0</span><span class="lbl">Miembros registrados</span></div>
+          <div class="stat"><span class="num" data-count="0" id="statPosts">0</span><span class="lbl">Mensajes en el tablón</span></div>
+          <div class="stat"><span class="num" data-count="24">0</span><span class="lbl">Horas activos (24/7)</span></div>
+        </div>
+
+        <div class="panel reveal">
+          <div class="panel-tabs" role="tablist">
+            <button class="tab active" data-tab="anuncios" role="tab">Anuncios</button>
+            <button class="tab" data-tab="rangos" role="tab">Rangos</button>
+            <button class="tab" data-tab="reglas" role="tab">Reglas</button>
+          </div>
+
+          <div class="tab-pane active" id="tab-anuncios">
+            <ul class="list" id="announcements"><li class="muted">Cargando anuncios…</li></ul>
+          </div>
+
+          <div class="tab-pane" id="tab-rangos">
+            <ul class="list">
+              <li><b>Capo</b><span>Cabeza de la familia. Toma las decisiones finales.</span></li>
+              <li><b>Sottocapo</b><span>Mano derecha del Capo.</span></li>
+              <li><b>Consigliere</b><span>Consejero y voz de la razón.</span></li>
+              <li><b>Capodecina</b><span>Lidera un grupo de soldados.</span></li>
+              <li><b>Soldato</b><span>Miembro de confianza que ya demostró su valía.</span></li>
+              <li><b>Associato</b><span>Colaborador que empieza su camino en la familia.</span></li>
+            </ul>
+          </div>
+
+          <div class="tab-pane" id="tab-reglas">
+            <ol class="list ordered">
+              <li>Respeta a todos los miembros y a la jerarquía.</li>
+              <li>Nada de spam, publicidad ni contenido ofensivo.</li>
+              <li>Lo que pasa en la familia, se queda en la familia.</li>
+              <li>Sigue siempre las indicaciones del staff.</li>
+              <li>Usa los canales para lo que fueron creados.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tablon">
+      <div class="container narrow">
+        <header class="section-head reveal">
+          <p class="eyebrow">Solo miembros</p>
+          <h2>Tablón de la Familia</h2>
+          <div class="divider"></div>
+        </header>
+
+        <div class="locked reveal" id="boardLocked">
+          <div class="icon">🔒</div>
+          <p>Inicia sesión para leer y escribir en el tablón.</p>
+          <button class="btn btn-gold" id="btnLogin2">Iniciar sesión</button>
+        </div>
+
+        <div class="board hidden reveal" id="board">
+          <form id="postForm" class="post-form">
+            <textarea id="postText" maxlength="400" rows="3" placeholder="Escribe un mensaje para la familia…" required></textarea>
+            <div class="post-actions"><small id="charCount">0 / 400</small><button class="btn btn-gold" type="submit">Publicar</button></div>
+          </form>
+          <ul class="posts" id="posts"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section discord" id="discord">
+      <div class="container narrow center reveal">
+        <p class="eyebrow">Comunidad</p>
+        <h2>Únete a nuestro Discord</h2>
+        <div class="divider"></div>
+        <p class="lead">Ahí vive la familia: eventos, roleplay, anuncios y mucho más. Entra y preséntate.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" id="discordMain" href="#" target="_blank" rel="noopener">Entrar al servidor</a>
+          <a class="btn btn-outline" id="discordRules" href="#" target="_blank" rel="noopener">Canal de reglas</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Famiglia Moltisanti · Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Modal de acceso -->
+  <div class="modal hidden" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="modal-box">
+      <button class="modal-close" id="authClose" aria-label="Cerrar">×</button>
+      <h3 id="authTitle">Acceso a la familia</h3>
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-mode="login">Entrar</button>
+        <button class="auth-tab" data-mode="signup">Registrarse</button>
+      </div>
+      <form id="authForm" novalidate>
+        <label class="field hidden" id="fieldUser">Nombre de usuario
+          <input type="text" id="authUser" maxlength="24" autocomplete="username" />
+        </label>
+        <label class="field">Correo electrónico
+          <input type="email" id="authEmail" required autocomplete="email" />
+        </label>
+        <label class="field">Contraseña
+          <input type="password" id="authPass" minlength="6" required autocomplete="current-password" />
+        </label>
+        <p class="form-msg" id="authMsg" role="status"></p>
+        <button class="btn btn-gold full" type="submit" id="authSubmit">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
